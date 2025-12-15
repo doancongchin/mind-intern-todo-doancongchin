@@ -1,5 +1,8 @@
 import { Form, Input, Button } from "antd";
 import type { Todo } from "../../types/todo.type";
+import { AiTwotonePhone  } from "react-icons/ai";
+import { AiTwotoneMail } from "react-icons/ai";
+import { AiOutlineUser } from "react-icons/ai";
 
 interface Props {
   onAdd: (todo: Todo) => void;
@@ -29,7 +32,7 @@ function TodoForm({ onAdd }: Props) {
         name="name"
         rules={[{ required: true, message: "Please enter name" }]}
       >
-        <Input />
+        <Input prefix={<AiOutlineUser   style={{ marginRight: 8 }} />} />
       </Form.Item>
 
       <Form.Item
@@ -37,7 +40,7 @@ function TodoForm({ onAdd }: Props) {
         name="phone"
         rules={[{ required: true, message: "Please enter phone" }]}
       >
-        <Input />
+        <Input prefix={<AiTwotonePhone  style={{ marginRight: 8 }} />} />
       </Form.Item>
 
       <Form.Item
@@ -48,7 +51,7 @@ function TodoForm({ onAdd }: Props) {
           { type: "email", message: "Email is not valid" },
         ]}
       >
-        <Input />
+        <Input prefix={<AiTwotoneMail  style={{ marginRight: 8 }} />} />
       </Form.Item>
 
       <Button type="primary" htmlType="submit">

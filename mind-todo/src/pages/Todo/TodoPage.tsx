@@ -11,6 +11,8 @@ import {
   deleteTodo as deleteTodoAction,
   updateTodo as updateTodoAction,
 } from "../../features/todo/todoSlice";
+import Logout from "../../components/Logout/Logout";
+
 
 function TodoPage() {
   const dispatch = useDispatch<AppDispatch>();
@@ -32,7 +34,10 @@ function TodoPage() {
 
   return (
     <div style={{ padding: 20 }}>
-      <h2>Todo List</h2>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h2>Todo List</h2>
+          <Logout />
+      </div>
 
       <TodoForm
         onAdd={(todo) => dispatch(addTodoAction(todo))}
